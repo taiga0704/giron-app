@@ -10,14 +10,16 @@
 <body class="bg-light">
   <div class="container mt-4 text-center">
     <h1>GIRON</h1>
-    <ul class="nav nav-tabs justify-content-center mt-3 mb-4">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">おすすめ</a>
+  <!-- タブメニュー（切り替えのスイッチ） -->
+    <ul class="nav nav-tabs justify-content-center mt-3 mb-4" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active fw-bold" id="recommend-tab" data-bs-toggle="tab" data-bs-target="#recommend" type="button">おすすめ</button>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-secondary" href="#">検索</a>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-secondary" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">全部</button>
       </li>
     </ul>
+
     <!-- カレンダー表示ボタン -->
     <div class="text-center mb-4">
       <button class="btn btn-outline-secondary rounded-pill shadow-sm fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#calendarArea">
@@ -51,57 +53,106 @@
         </div>
       </div>
     </div>
-   <!-- 投稿カード1: 10代におすすめ -->
-    <div class="card mb-3 text-start shadow-sm border-0">
-      <div class="card-body">
-        <span class="badge bg-info mb-2">10代におすすめ</span>
-        <h5 class="card-title fw-bold">学則について</h5>
-        <p class="card-text text-muted mb-2">今の時代の学校のルール、どうあるべき？</p>
-        <div class="d-flex justify-content-center gap-2">
-          <span class="btn btn-outline-danger w-50 fw-bold">厳しくする</span>
-          <span class="btn btn-outline-primary w-50 fw-bold">自由にする</span>
+   <!-- タブの中身全体 -->
+    <div class="tab-content" id="myTabContent">
+      
+      <!-- ①「おすすめ」タブの中身 -->
+      <div class="tab-pane fade show active" id="recommend">
+        
+        <!-- 10代のカード -->
+        <div class="card mb-3 text-start shadow-sm border-0">
+          <div class="card-body">
+            <span class="badge bg-info mb-2">10代におすすめ</span>
+            <h5 class="card-title fw-bold">学則について</h5>
+            <p class="card-text text-muted mb-2">今の時代の学校のルール、どうあるべき？</p>
+            <div class="bg-light p-2 rounded mb-3" style="font-size: 0.85rem;">
+              <div class="text-danger fw-bold">🔥厳しくする派: 「ルールがないと荒れる」 (👍 45)</div>
+              <div class="text-primary fw-bold mt-1">💧自由にする派: 「時代遅れの校則は不要」 (👍 120)</div>
+            </div>
+            <div class="d-flex justify-content-center gap-2">
+              <span class="btn btn-outline-danger w-50 fw-bold">厳しくする</span>
+              <span class="btn btn-outline-primary w-50 fw-bold">自由にする</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- 投稿カード2: 20代におすすめ -->
-    <div class="card mb-3 text-start shadow-sm border-0">
-      <div class="card-body">
-        <span class="badge bg-primary mb-2">20代におすすめ</span>
-        <h5 class="card-title fw-bold">最初に学ぶプログラミング</h5>
-        <p class="card-text text-muted mb-2">初心者が勉強を始めるならどっち？</p>
-        <div class="d-flex justify-content-center gap-2">
-          <span class="btn btn-outline-danger w-50 fw-bold">Python陣営</span>
-          <span class="btn btn-outline-primary w-50 fw-bold">Java陣営</span>
+        <!-- 全世代のカード -->
+        <div class="card mb-3 text-start shadow-sm border-0 mb-5">
+          <div class="card-body">
+            <span class="badge bg-warning text-dark mb-2">全世代</span>
+            <h5 class="card-title fw-bold">ペットを飼うなら？</h5>
+            <p class="card-text text-muted mb-2">どちらの陣営で語り合いますか？</p>
+            <div class="bg-light p-2 rounded mb-3" style="font-size: 0.85rem;">
+              <div class="text-danger fw-bold">🔥犬派: 「一緒に散歩できるのが最高！」 (👍 340)</div>
+              <div class="text-primary fw-bold mt-1">💧猫派: 「マイペースな所に癒やされる」 (👍 410)</div>
+            </div>
+            <div class="d-flex justify-content-center gap-2">
+              <span class="btn btn-outline-danger w-50 fw-bold">犬派</span>
+              <span class="btn btn-outline-primary w-50 fw-bold">猫派</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- 投稿カード3: 30代におすすめ -->
-    <div class="card mb-3 text-start shadow-sm border-0">
-      <div class="card-body">
-        <span class="badge bg-success mb-2">30代におすすめ</span>
-        <h5 class="card-title fw-bold">身近な法律やルール</h5>
-        <p class="card-text text-muted mb-2">これからの社会のルールはどうしていくべき？</p>
-        <div class="d-flex justify-content-center gap-2">
-          <span class="btn btn-outline-danger w-50 fw-bold">規制を強化</span>
-          <span class="btn btn-outline-primary w-50 fw-bold">規制を緩和</span>
-        </div>
-      </div>
-    </div>
+      </div><!-- おすすめタブ終わり -->
 
-    <!-- 投稿カード4: 全世代 -->
-    <div class="card mb-3 text-start shadow-sm border-0 mb-5">
-      <div class="card-body">
-        <span class="badge bg-warning text-dark mb-2">全世代</span>
-        <h5 class="card-title fw-bold">ペットを飼うなら？</h5>
-        <p class="card-text text-muted mb-2">どちらの陣営で語り合いますか？</p>
-        <div class="d-flex justify-content-center gap-2">
-          <span class="btn btn-outline-danger w-50 fw-bold">犬派</span>
-          <span class="btn btn-outline-primary w-50 fw-bold">猫派</span>
+      <!-- ②「全部」タブの中身 -->
+      <div class="tab-pane fade" id="all">
+        
+        <!-- 10代のカード -->
+        <div class="card mb-3 text-start shadow-sm border-0">
+          <div class="card-body">
+            <span class="badge bg-info mb-2">10代におすすめ</span>
+            <h5 class="card-title fw-bold">学則について</h5>
+            <p class="card-text text-muted mb-2">今の時代の学校のルール、どうあるべき？</p>
+            <div class="d-flex justify-content-center gap-2">
+              <span class="btn btn-outline-danger w-50 fw-bold">厳しくする</span>
+              <span class="btn btn-outline-primary w-50 fw-bold">自由にする</span>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+
+        <!-- 20代のカード -->
+        <div class="card mb-3 text-start shadow-sm border-0">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">20代におすすめ</span>
+            <h5 class="card-title fw-bold">最初に学ぶプログラミング</h5>
+            <p class="card-text text-muted mb-2">初心者が勉強を始めるならどっち？</p>
+            <div class="d-flex justify-content-center gap-2">
+              <span class="btn btn-outline-danger w-50 fw-bold">Python陣営</span>
+              <span class="btn btn-outline-primary w-50 fw-bold">Java陣営</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 30代のカード -->
+        <div class="card mb-3 text-start shadow-sm border-0">
+          <div class="card-body">
+            <span class="badge bg-success mb-2">30代におすすめ</span>
+            <h5 class="card-title fw-bold">身近な法律やルール</h5>
+            <p class="card-text text-muted mb-2">これからの社会のルールはどうしていくべき？</p>
+            <div class="d-flex justify-content-center gap-2">
+              <span class="btn btn-outline-danger w-50 fw-bold">規制を強化</span>
+              <span class="btn btn-outline-primary w-50 fw-bold">規制を緩和</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 全世代のカード -->
+        <div class="card mb-3 text-start shadow-sm border-0 mb-5">
+          <div class="card-body">
+            <span class="badge bg-warning text-dark mb-2">全世代</span>
+            <h5 class="card-title fw-bold">ペットを飼うなら？</h5>
+            <p class="card-text text-muted mb-2">どちらの陣営で語り合いますか？</p>
+            <div class="d-flex justify-content-center gap-2">
+              <span class="btn btn-outline-danger w-50 fw-bold">犬派</span>
+              <span class="btn btn-outline-primary w-50 fw-bold">猫派</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- 全部タブ終わり -->
+
+    </div><!-- タブの中身全体終わり -->
     
     <!-- 右下の丸い投稿ボタン -->
     <a href="post.html" class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-4 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; font-size: 24px; color: white; text-decoration: none;">＋</a>
